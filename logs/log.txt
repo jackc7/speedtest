@@ -68,3 +68,106 @@
 [2020-08-29 04:57:06.93] (02.37s) - Typo [66wpm] | They looked u <- Here | Typed 'o' instead of 'p'
 [2020-08-29 04:57:24.61] (12.63s) - Typo [9wpm] | Fluffy pin <- Here | Typed 'g' instead of 'k'
 [2020-08-29 04:57:39.25] (09.59s) - Typo [58wpm] | The golden retriever loved the fireworks each  <- Here | Typed 'f' instead of 'F'
+[2020-08-29 05:21:48.80] (03.12s) - Typo [69wpm] | He found the end o <- Here | Typed 't' instead of 'f'
+[2020-08-29 05:22:02.95] (09.11s) - Typo [62wpm] | She looked at the masterpiece hanging in the mu <- Here | Typed 'y' instead of 's'
+[2020-08-29 05:22:14.05] (06.06s) - Typo [75wpm] | The golden retriever loved the firewor <- Here | Typed 'd' instead of 'k'
+[2020-08-29 05:22:27.75] (06.17s) - Typo [82wpm] | If you don't like toenails, you probably s <- Here | Typed 'o' instead of 'h'
+[2020-08-29 05:22:35.61] (02.83s) - Typo [55wpm] | Two more days <- Here | Typed 'a' instead of ' '
+[2020-08-29 05:22:49.15] (05.58s) - Typo [71wpm] | In hopes of finding out the truth <- Here | Typed 'm' instead of ','
+[2020-08-29 05:22:58.32] (04.14s) - Typo [46wpm] | He uses onomatop <- Here | Typed 'e' instead of 'o'
+[2020-08-29 05:23:06.87] (02.70s) - Typo [71wpm] | The quick brown  <- Here | Typed 'j' instead of 'f'
+[2020-08-29 05:23:18.69] (06.78s) - Completed Successfully [69wpm] | Rock music approaches at high velocity.
+[2020-08-29 05:23:30.31] (03.97s) - Typo [60wpm] | He had reached the p <- Here | Typed 'i' instead of 'o'
+[2020-08-29 05:24:37.97] (04.07s) - Typo [74wpm] | He ended up burning his f <- Here | Typed 'u' instead of 'i'
+[2020-08-29 05:24:49.60] (06.58s) - Typo [64wpm] | Abstraction is often one floor abov <- Here | Typed 'c' instead of 'e'
+[2020-08-29 05:25:05.14] (01.86s) - Typo [52wpm] | Combines <- Here | Typed 'a' instead of ' '
+[2020-08-29 05:25:18.18] (08.00s) - Completed Successfully [69wpm] | It was getting dark, and we weren't there yet.
+[2020-08-29 05:25:35.95] (08.41s) - Completed Successfully [68wpm] | Everyone was busy, so I went to the movie alone.
+[2020-08-29 05:25:47.09] (06.10s) - Completed Successfully [73wpm] | He shaved the peach to prove a point.
+[2020-08-29 05:26:05.96] (10.39s) - Typo [73wpm] | He had reached the point where he was paranoid about being para <- Here | Typed 'b' instead of 'n'
+[2020-08-29 05:26:18.47] (05.80s) - Typo [72wpm] | He turned in the research paper on  <- Here | Typed 'f' instead of 'F'
+[2020-08-29 05:26:43.47] (19.95s) - Typo [16wpm] | In hopes of finding out th <- Here | Typed ' ' instead of 'e'
+[2020-08-29 05:26:56.40] (06.81s) - Completed Successfully [60wpm] | Garlic ice-cream was her favorite.
+[2020-08-29 05:27:08.72] (06.47s) - Completed Successfully [76wpm] | Abstraction is often one floor above you.
+[2020-08-29 05:27:25.28] (08.32s) - Typo [76wpm] | Today I dressed my unicorn in preparation for the rac <- Here | Typed 'a' instead of 'e'
+[2020-08-29 05:27:39.55] (09.25s) - Typo [69wpm] | In hopes of finding out the truth, he entered the one <- Here | Typed '0' instead of '-'
+[2020-08-29 05:27:44.81] (00.21s) - Typo [0wpm] |  <- Here | Typed 'n' instead of 'N'
+[2020-08-29 05:27:50.33] (00.48s) - Typo [25wpm] | I <- Here | Typed ';' instead of '''
+[2020-08-29 05:30:26.32] (01.86s) - Typo [39wpm] | He fum <- Here | Typed 'v' instead of 'b'
+[2020-08-29 05:31:07.42] (00.85s) - Typo [42wpm] | Wit <- Here | Typed ' ' instead of 'h'
+[2020-08-29 05:31:19.57] (08.12s) - Completed Successfully [74wpm] | They looked up at the sky and saw a million stars.
+[2020-08-29 05:32:30.76] (05.57s) - Completed Successfully [73wpm] | The father died during childbirth.
+[2020-08-29 05:32:40.86] (04.47s) - Typo [86wpm] | He found the end of the rainbow  <- Here | Typed 'n' instead of 'a'
+[2020-08-29 05:32:46.27] (02.38s) - Typo [81wpm] | The father died  <- Here | Typed 'r' instead of 'd'
+[2020-08-29 05:32:54.43] (05.13s) - Typo [75wpm] | He fumbled in the darkness looki <- Here | Typed 'u' instead of 'n'
+[2020-08-29 05:33:05.99] (08.52s) - Completed Successfully [69wpm] | I love eating toasted cheese and tuna sandwiches.
+[2020-08-29 05:33:26.35] (08.01s) - Completed Successfully [75wpm] | They looked up at the sky and saw a million stars.
+[2020-08-29 05:33:33.20] (01.99s) - Typo [48wpm] | Shingle  <- Here | Typed 's' instead of 'c'
+[2020-08-29 05:33:43.28] (07.05s) - Completed Successfully [71wpm] | Having no hair made him look even hairier.
+[2020-08-29 05:33:54.40] (01.31s) - Typo [55wpm] | Today  <- Here | Typed 'i' instead of 'I'
+[2020-08-29 05:34:00.14] (01.50s) - Typo [56wpm] | Patrici <- Here | Typed 'e' instead of 'a'
+[2020-08-29 05:34:09.17] (06.00s) - Completed Successfully [74wpm] | We need to rent a room for our party.
+[2020-08-29 05:34:16.76] (00.50s) - Typo [24wpm] | S <- Here | Typed 'n' instead of 'h'
+[2020-08-29 05:34:29.59] (04.55s) - Typo [66wpm] | He is good at eating pick <- Here | Typed 'e' instead of 'l'
+[2020-08-29 05:34:38.38] (05.76s) - Typo [69wpm] | In hopes of finding out the truth <- Here | Typed 'm' instead of ','
+[2020-08-29 05:34:55.57] (14.15s) - Typo [79wpm] | She looked at the masterpiece hanging in the museum but all she could think is that her five- <- Here | Typed 't' instead of 'y'
+[2020-08-29 05:35:07.78] (08.03s) - Typo [75wpm] | He had accidentally hacked into his company's serv <- Here | Typed 'c' instead of 'e'
+[2020-08-29 05:35:24.50] (11.50s) - Completed Successfully [79wpm] | He is good at eating pickles and telling women about his emotional problems.
+[2020-08-29 05:35:32.50] (04.99s) - Typo [72wpm] | Garlic ice-cream was her favor <- Here | Typed 'e' instead of 'i'
+[2020-08-29 05:35:37.21] (01.67s) - Typo [79wpm] | He didn't w <- Here | Typed 'n' instead of 'a'
+[2020-08-29 05:35:48.12] (07.89s) - Typo [62wpm] | The quick brown fox jumps over the lazy d <- Here | Typed 'i' instead of 'o'
+[2020-08-29 05:36:00.01] (08.87s) - Completed Successfully [62wpm] | She had a habit of taking showers in lemonade.
+[2020-08-29 05:36:10.60] (05.95s) - Typo [54wpm] | Buried deep in the snow, he <- Here | Typed 'h' instead of ' '
+[2020-08-29 05:36:18.67] (02.63s) - Typo [50wpm] | The golden  <- Here | Typed 't' instead of 'r'
+[2020-08-29 05:36:28.31] (06.60s) - Typo [60wpm] | In hopes of finding out the truth <- Here | Typed 'm' instead of ','
+[2020-08-29 05:36:32.19] (00.86s) - Typo [14wpm] | H <- Here | Typed ' ' instead of 'e'
+[2020-08-29 05:36:35.28] (00.06s) - Typo [0wpm] |  <- Here | Typed '' instead of 'T'
+[2020-08-29 05:36:46.57] (08.25s) - Typo [77wpm] | He had reached the point where he was paranoid about  <- Here | Typed 'v' instead of 'b'
+[2020-08-29 05:36:55.02] (02.66s) - Typo [68wpm] | Garlic ice-crea <- Here | Typed 'p' instead of 'm'
+[2020-08-29 05:37:04.95] (04.36s) - Typo [61wpm] | The quick brown fox ju <- Here | Typed 'n' instead of 'm'
+[2020-08-29 05:37:12.94] (04.97s) - Typo [77wpm] | Combines are no longer just for  <- Here | Typed 'r' instead of 'f'
+[2020-08-29 05:37:19.35] (03.37s) - Typo [78wpm] | Patricia loves the sou <- Here | Typed 'b' instead of 'n'
+[2020-08-29 05:37:22.77] (00.40s) - Typo [0wpm] |  <- Here | Typed 'c' instead of 'C'
+[2020-08-29 05:37:26.80] (01.02s) - Typo [35wpm] | He  <- Here | Typed 'h' instead of 'e'
+[2020-08-29 05:37:37.90] (07.11s) - Typo [66wpm] | Everyone was busy, so I went to the mov <- Here | Typed 'e' instead of 'i'
+[2020-08-29 17:17:31.73] (01.42s) - Typo [68wpm] | The humm <- Here | Typed 'b' instead of 'i'
+[2020-08-29 17:17:36.89] (02.12s) - Typo [57wpm] | Fluffy pin <- Here | Typed 'g' instead of 'k'
+[2020-08-29 17:17:44.47] (02.71s) - Typo [84wpm] | She had some amazin <- Here | Typed ' ' instead of 'g'
+[2020-08-29 17:17:56.59] (07.48s) - Typo [79wpm] | Shingle color was not something the couple had ev <- Here | Typed 'c' instead of 'e'
+[2020-08-29 17:18:05.31] (03.66s) - Typo [85wpm] | Buried deep in the snow, h <- Here | Typed 'j' instead of 'e'
+[2020-08-29 17:18:10.40] (02.05s) - Typo [64wpm] | Never under <- Here | Typed 's' instead of 'e'
+[2020-08-29 17:18:16.98] (03.57s) - Typo [54wpm] | He uses onomatop <- Here | Typed 'e' instead of 'o'
+[2020-08-29 17:18:22.55] (02.55s) - Typo [94wpm] | Combines are no long <- Here | Typed ' ' instead of 'e'
+[2020-08-29 17:18:30.24] (03.76s) - Typo [73wpm] | Abstraction is often on <- Here | Typed ' ' instead of 'e'
+[2020-08-29 17:18:39.77] (06.50s) - Typo [81wpm] | The urgent care center was flooded with pati <- Here | Typed 'o' instead of 'e'
+[2020-08-29 17:18:47.37] (04.59s) - Typo [68wpm] | Never underestimate the wi <- Here | Typed 'k' instead of 'l'
+[2020-08-29 17:18:55.65] (03.80s) - Typo [82wpm] | She looked at the masterpi <- Here | Typed 'o' instead of 'e'
+[2020-08-29 17:19:01.59] (02.92s) - Typo [62wpm] | Warm beer on a  <- Here | Typed 'l' instead of 'c'
+[2020-08-29 17:19:16.12] (09.91s) - Typo [53wpm] | He uses onomatopoeia as a weapon of mental d <- Here | Typed 'r' instead of 'e'
+[2020-08-29 17:19:27.75] (07.85s) - Completed Successfully [81wpm] | He had accidentally hacked into his company's server.
+[2020-08-29 19:07:40.60] (06.24s) - Completed Successfully [77wpm] | This book is sure to liquefy your brain.
+[2020-08-29 19:07:49.00] (04.20s) - Typo [86wpm] | Warm beer on a cold day isn't  <- Here | Typed 't' instead of 'm'
+[2020-08-29 19:07:53.34] (00.44s) - Typo [0wpm] |  <- Here | Typed 'D' instead of 'S'
+[2020-08-29 19:08:02.43] (06.00s) - Typo [74wpm] | Warm beer on a cold day isn't my idea <- Here | Typed '.' instead of ' '
+[2020-08-29 19:08:17.65] (11.02s) - Typo [73wpm] | Buried deep in the snow, he hoped his batteries were fresh in his a <- Here | Typed 'l' instead of 'v'
+[2020-08-29 19:08:27.05] (06.37s) - Completed Successfully [70wpm] | We need to rent a room for our party.
+[2020-08-29 19:08:33.46] (02.36s) - Typo [71wpm] | The beauty of  <- Here | Typed 'h' instead of 't'
+[2020-08-29 19:08:47.15] (10.67s) - Typo [72wpm] | I would have gotten the promotion, but my attendance wasn't good <- Here | Typed 'e' instead of ' '
+[2020-08-29 19:08:53.83] (01.77s) - Typo [54wpm] | Abstract <- Here | Typed 'y' instead of 'i'
+[2020-08-29 19:09:01.02] (04.18s) - Typo [92wpm] | He found the end of the rainbow  <- Here | Typed 'n' instead of 'a'
+[2020-08-29 19:09:12.90] (08.85s) - Completed Successfully [85wpm] | She had some amazing news to share but nobody to share it with.
+[2020-08-29 19:09:26.84] (09.03s) - Completed Successfully [84wpm] | She had some amazing news to share but nobody to share it with.
+[2020-08-29 19:10:47.30] (14.53s) - Typo [50wpm] | In hopes of finding out the truth, he entered the one-room li <- Here | Typed 'v' instead of 'b'
+[2020-08-29 19:11:17.49] (19.62s) - Completed Successfully [72wpm] | She looked at the masterpiece hanging in the museum but all she could think is that her five-year-old could do better.
+[2020-08-29 19:11:31.02] (07.89s) - Typo [50wpm] | Nudist colonies shun fig-leaf cou <- Here | Typed '' instead of 't'
+[2020-08-29 19:15:30.04] (02.19s) - Typo [0wpm] |  <- Here | Typed '' instead of 'W'
+[2020-08-29 19:15:53.24] (14.95s) - Typo [0wpm] |  <- Here | Typed '&' instead of 'W'
+[2020-08-29 19:16:33.43] (36.15s) - Typo [0wpm] |  <- Here | Typed '&' instead of 'S'
+[2020-08-29 19:17:12.16] (34.67s) - Typo [7wpm] | He found the end of <- Here | Typed 'g' instead of ' '
+[2020-08-29 19:17:21.12] (04.92s) - Typo [88wpm] | He shaved the peach to prove a point <- Here | Typed 's' instead of '.'
+[2020-08-29 19:17:26.21] (00.37s) - Typo [33wpm] | H <- Here | Typed 'J' instead of 'e'
+[2020-08-29 19:17:31.46] (01.21s) - Typo [50wpm] | With  <- Here | Typed 't' instead of 'a'
+[2020-08-29 19:17:49.59] (02.88s) - Typo [0wpm] |  <- Here | Typed '' instead of 'H'
+[2020-08-29 19:18:08.58] (09.54s) - Typo [0wpm] |  <- Here | Typed '' instead of 'H'
+[2020-08-29 19:18:27.07] (10.88s) - Typo [0wpm] |  <- Here | Typed '' instead of 'W'
+[2020-08-29 19:18:36.76] (01.45s) - Typo [0wpm] |  <- Here | Typed 'C' instead of 'G'

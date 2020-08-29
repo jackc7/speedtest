@@ -11,6 +11,9 @@ import sys
 
 text = None
 
+menu_speed = 1 # sleep() seconds
+countdown = 5 # 3 = 3, 2, 1 go. 2 = 2, 1 go.
+
 
 def end(starting_time):
     ending_time = time()
@@ -29,12 +32,9 @@ def random_paragraph():
 
 
 def body(paragraph):
-    print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in 3 seconds...")
-    sleep(1)
-    print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in 2 seconds...")
-    sleep(1)
-    print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in 1 second...")
-    sleep(1)
+    for i in range(countdown, 0, -1):
+        print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in {i} seconds...")
+        sleep(1)
 
     global text
     text = []
@@ -86,12 +86,12 @@ def menu():
     if is_complete is False:
         wpm = len(text) / 5 / time_delta * 60
         print('\033c' + Fore.RED + "Incorrect" + Fore.WHITE + ". " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute.")
-        sleep(2)
+        sleep(menu_speed)
 
     else:
         wpm = len(text) / 5 / time_delta * 60
         print("\033c" + f"Sentence completed at {Fore.GREEN + str(round(wpm)) + Fore.WHITE} words per minute")
-        sleep(2)
+        sleep(menu_speed)
 
 
 if __name__ == "__main__":
