@@ -1,12 +1,15 @@
 # 8/29/2020
 
-
 from time import time, sleep
+from logger import logger
 from colorama import Fore
 
 import readchar
 import random
 import sys
+
+
+text = None
 
 
 def end(starting_time):
@@ -26,6 +29,14 @@ def random_paragraph():
 
 
 def body(paragraph):
+    print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in 3 seconds...")
+    sleep(1)
+    print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in 2 seconds...")
+    sleep(1)
+    print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in 1 second...")
+    sleep(1)
+
+    global text
     text = []
 
     start = time()
@@ -35,16 +46,32 @@ def body(paragraph):
 
         try:
             button = readchar.readchar().decode("utf-8")
+
+            # Checks if typed letter is wrong.
             if button != paragraph[i]:
                 time_delta = end(start)
+
+                wpm = round(len(text) / 5 / time_delta * 60)
+                logger(f"Typo [{wpm}wpm] | {''.join(text)} <- Here | Typed '{button}' instead of '{paragraph[i]}'", "log.txt", start)
+
                 return time_delta, False
+
             text.append(button)
-        except:
+            
+        except: # If invalid key pressed.
             time_delta = end(start)
+
+            wpm = round(len(text) / 5 / time_delta * 60)
+            logger(f"Invalid Keypress [{wpm}wpm] | {''.join(text)} <- Here", "log.txt", start)
+
             return time_delta, False
 
-        if "".join(text) == paragraph:
+        if "".join(text) == paragraph: # Checks if what you typed is the same as the given paragraph.
             time_delta = end(start)
+
+            wpm = round(len(text) / 5 / time_delta * 60)
+            logger(f"Completed Successfully [{wpm}wpm] | {''.join(text)}", "log.txt", start)
+
             return time_delta, True
 
 
@@ -57,12 +84,12 @@ def menu():
     time_delta, is_complete = body(paragraph)
 
     if is_complete is False:
-        wpm = len(paragraph) / 5 / time_delta * 60
-        print('\033c' + Fore.RED + "Incorrect. " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute.")
+        wpm = len(text) / 5 / time_delta * 60
+        print('\033c' + Fore.RED + "Incorrect" + Fore.WHITE + ". " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute.")
         sleep(2)
 
     else:
-        wpm = len(paragraph) / 5 / time_delta * 60
+        wpm = len(text) / 5 / time_delta * 60
         print("\033c" + f"Sentence completed at {Fore.GREEN + str(round(wpm)) + Fore.WHITE} words per minute")
         sleep(2)
 
