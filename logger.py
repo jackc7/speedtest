@@ -1,9 +1,8 @@
 from datetime import datetime
-from platform import system
 from time import time
 
 
-def logger(body="Test", file_name=None, starting_time=None): # Starting time expects Unix Timestamp (time.time()) Float
+def logger(body="Test", file_name=None, starting_time=None): # Starting time in uts
     tstamp = str(datetime.now())[:-4]
     log = [f'[{tstamp}]']
 
@@ -28,12 +27,11 @@ def logger(body="Test", file_name=None, starting_time=None): # Starting time exp
 
     if file_name is None:   
         import __main__
-        os = system()
         
-        if os == "Windows":
-            file_name = "log-" + __main__.__file__.split("\\")[-1].replace(".py", ".txt") # Windows
-        else:
-            file_name = "log-" + __main__.__file__.split("/")[-1].replace(".py", ".txt") # Linux/MacOS
+        try: txt_file = __main__.__file__.split("/")[-1].replace(".py", ".txt")
+        except: txt_file = __main__.__file__.split("\\")[-1].replace(".py", ".txt")
+
+        file_name = "log-" + txt_file
 
     with open(f"logs/{file_name}","a") as file:
         file.write(log)
@@ -43,4 +41,4 @@ def logger(body="Test", file_name=None, starting_time=None): # Starting time exp
 
 if __name__ == "__main__":
     t1 = time()
-    logger("Testing 123", starting_time=t1)
+    print(logger("Testing 123", starting_time=t1))
