@@ -1,24 +1,26 @@
 # 8/29/2020
 
+from colorama import Fore, init
 from time import time, sleep
 from logger import logger
-from colorama import Fore, init
 
+import subprocess
 import readchar
 import random
 import sys
-import ahk
+
 
 """
 l - open logs
 o - open sentences 
 """
-
-menu_speed = 1 # sleep() seconds
-countdown = 1 # start countdown at this number
+menu_speed = 1 # In seconds
+countdown = 1 # Count down from
 
 text = None
 start = None
+number = None
+
 
 log_loc = "C://Users//jack7//Desktop//Python//SpeedTest//logs//log.txt"
 
@@ -30,8 +32,12 @@ def time_check(starting_time):
 
 def random_paragraph():
     with open("sentences.txt", "r") as file:
-        number = random.randint(0, 301)
-        sentence = file.readlines()[number]
+        lines = file.readlines()
+        
+        global number
+        number = random.randint(0, len(lines) - 1)
+        
+        sentence = lines[number]
     return sentence[:-1]
 
 def body(paragraph):
@@ -46,34 +52,28 @@ def body(paragraph):
     start = time()
 
     sleep(.1)
-    for i in range(len(paragraph)):
+    
+    i = -1
+    # for i in range(len(paragraph)):
+    while True:
+        i += 1
         time_delta = time_check(start)
 
         wpm = str(round(len(text) / 5 / time_delta * 60))
         print("\033c" + Fore.GREEN + "".join(text) + Fore.WHITE + paragraph[i:] + "\n\nCurrent Speed: " + Fore.GREEN + wpm + Fore.WHITE + " wpm.")
 
-        try:
-            button = readchar.readchar().decode("utf-8")                
-
-            # Checks if typed letter is wrong.
-            if button != paragraph[i]:
-                time_delta = time_check(start)
-
-                wpm = round(len(text) / 5 / time_delta * 60)
-                logger(f"Typo [{wpm} wpm] | {''.join(text)} <- Here | Typed '{button}' instead of '{paragraph[i]}'", "log.txt", start)
-
-                return time_delta, False
-
-            text.append(button)
-            
-        except: # If invalid key pressed.
+        button = readchar.readchar().decode("utf-8")                
+  
+        if button != paragraph[i]: # Checks if typed letter is wrong.
             time_delta = time_check(start)
 
             wpm = round(len(text) / 5 / time_delta * 60)
-            logger(f"Invalid Keypress [{wpm}wpm] | {''.join(text)} <- Here", "log.txt", start)
+            logger(f"Typo [{wpm} wpm] | {''.join(text)} <- Here | Typed '{button}' instead of '{paragraph[i]}'", "log.txt", start)
 
             return time_delta, False
 
+        lol = text.append(button)
+            
         if "".join(text) == paragraph: # Checks if what you typed is the same as the given paragraph.
             time_delta = time_check(start)
 
@@ -85,15 +85,15 @@ def body(paragraph):
 def menu():
     paragraph = random_paragraph()
     
-    print("\033c" + Fore.YELLOW + "Typing Speed Test: Press" + Fore.LIGHTYELLOW_EX + " any button " + Fore.YELLOW + "to begin." + Fore.WHITE)
+    print("\033c" + Fore.YELLOW + "Typing Speed Test: Press" + Fore.LIGHTYELLOW_EX + " any button " + Fore.YELLOW + "to begin, " + Fore.LIGHTYELLOW_EX + "")
     
     option = readchar.readchar().decode("utf-8")
     
     if option == "l":
-        ahk.run_file(log_loc)
+        subprocess.Popen("start " + log_loc, shell=True)
         return
     if option == "o":
-        ahk.run_file("C:/Users/jack7/Desktop/Python/typeracer/SpeedTest/sentences.txt")
+        subprocess.Popen("start sentences.txt", shell=True)
         return
     
     time_delta, is_complete = body(paragraph)
