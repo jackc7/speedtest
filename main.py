@@ -14,8 +14,11 @@ import sys
 l - open logs
 o - open sentences 
 """
+
+
 menu_speed = 1 # In seconds
 countdown = 1 # Count down from
+
 
 text = None
 start = None
