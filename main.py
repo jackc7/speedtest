@@ -1,5 +1,3 @@
-# 8/29/2020
-
 from colorama import Fore, init
 from time import time, sleep
 from logger import logger
