@@ -2,7 +2,6 @@ from colorama import Fore, init
 from time import time, sleep
 from logger import logger
 
-import subprocess
 import readchar
 import random
 import sys
