@@ -8,6 +8,7 @@ import subprocess
 import readchar
 import random
 import sys
+import os
 
 
 """
@@ -24,8 +25,6 @@ text = None
 start = None
 number = None
 
-
-log_loc = "C://Users//jack7//Desktop//Python//SpeedTest//logs//log.txt"
 
 def time_check(starting_time):
     ending_time = time()
@@ -55,9 +54,9 @@ def body(paragraph):
     start = time()
 
     sleep(.1)
-    
+
     i = -1
-    # for i in range(len(paragraph)):
+
     while True:
         i += 1
         time_delta = time_check(start)
@@ -71,7 +70,7 @@ def body(paragraph):
             time_delta = time_check(start)
 
             wpm = round(len(text) / 5 / time_delta * 60)
-            logger(f"Typo [{wpm} wpm] | {''.join(text)} <- Here | Typed '{button}' instead of '{paragraph[i]}'", "log.txt", start)
+            logger(f"Typo [{wpm} wpm] | {''.join(text)} <- Here | Typed '{button}' instead of '{paragraph[i]}'", "main.log", start)
 
             return time_delta, False
 
@@ -81,7 +80,7 @@ def body(paragraph):
             time_delta = time_check(start)
 
             wpm = round(len(text) / 5 / time_delta * 60)
-            logger(f"Completed Successfully [{wpm}wpm] | {''.join(text)}", "log.txt", start)
+            logger(f"Completed Successfully [{wpm}wpm] | {''.join(text)}", "main.log", start)
 
             return time_delta, True
 
@@ -93,10 +92,10 @@ def menu():
     option = readchar.readchar().decode("utf-8")
     
     if option == "l":
-        subprocess.Popen("start " + log_loc, shell=True)
+        os.system("start logs/main.log")
         return
     if option == "o":
-        subprocess.Popen("start sentences.txt", shell=True)
+        os.system("start sentences.txt")
         return
     
     time_delta, is_complete = body(paragraph)
