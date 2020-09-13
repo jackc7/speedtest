@@ -13,10 +13,8 @@ l - open logs
 o - open sentences 
 """
 
-
 menu_speed = 1 # In seconds
 countdown = 1 # Count down from
-
 
 text = None
 start = None
@@ -44,40 +42,50 @@ def body(paragraph):
 
     global text
     text = []
-
+        
     global start
     start = time()
-
-    sleep(.1)
-
-    i = -1
-
+    
+    typed = []
+    i = 0
+    incorrect = 0
+    
     while True:
-        i += 1
         time_delta = time_check(start)
+        
+        try: accuracy = round((len(typed) - incorrect) / len(typed) * 100)
+        except: accuracy = 100
+        
+        try: wpm = round(len(text) / 5 / time_delta * 60)
+        except: wpm = 0
+        
+        print("\033c" + "".join(text) + Fore.WHITE + paragraph[i:] + "\n\nCurrent Speed: " + Fore.GREEN + str(wpm) + Fore.WHITE + f" wpm.\n{accuracy}% accurate.")
 
-        wpm = round(len(text) / 5 / time_delta * 60)
-        print("\033c" + Fore.GREEN + "".join(text) + Fore.WHITE + paragraph[i:] + "\n\nCurrent Speed: " + Fore.GREEN + str(wpm) + Fore.WHITE + " wpm.")
-
-        button = readchar.readchar().decode("utf-8")                
-  
-        if button != paragraph[i]: # Checks if typed letter is wrong.
-            time_delta = time_check(start)
-
-            wpm = round(len(text) / 5 / time_delta * 60)
-            logger(f"Typo [{wpm} wpm] | {''.join(text)} <- Here | Typed '{button}' instead of '{paragraph[i]}'", "main.log", start)
-
+        button = readchar.readchar()
+        letter = button.decode('utf-8')
+        
+        if button == b'\x08':
+            i -= 1
+            text = text[:-1]
+            typed = typed[:-1]
+            continue
+        elif button == b'\r':
             return time_delta, False
-
-        lol = text.append(button)
+        
+        if letter != paragraph[i]:
+            text.append(Fore.RED + letter)
+            incorrect += 1
+        elif letter == paragraph[i]:
+            text.append(Fore.GREEN + letter)
+        
+        typed.append(letter)
+        i += 1
             
-        if "".join(text) == paragraph: # Checks if what you typed is the same as the given paragraph.
-            time_delta = time_check(start)
-
-            wpm = round(len(text) / 5 / time_delta * 60)
-            logger(f"Completed Successfully [{wpm}wpm] | {''.join(text)}", "main.log", start)
-
-            return time_delta, True
+        if len("".join(typed)) == len(paragraph):
+            if "".join(typed) == paragraph:
+                logger(f"Completed Successfully [{wpm}wpm, {accuracy}%] | {''.join(text)}", "main.log", start)
+                return time_delta, True
+            
 
 def menu():
     paragraph = random_paragraph()
@@ -87,10 +95,10 @@ def menu():
     option = readchar.readchar().decode("utf-8")
     
     if option == "l":
-        os.system("start logs/main.log")
+        os.system("./logs/main.log")
         return
     if option == "o":
-        os.system("start sentences.txt")
+        os.system("./sentences.txt")
         return
     
     time_delta, is_complete = body(paragraph)
