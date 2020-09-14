@@ -41,8 +41,3 @@ def logger(body="Test", file_name=None, starting_time=None): # Starting time in 
             file.write(log)
     
     return log[:-1]
-
-
-if __name__ == "__main__":
-    t1 = time()
-    print(logger("Testing 123", starting_time=t1))
