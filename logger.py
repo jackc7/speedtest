@@ -41,3 +41,4 @@ def logger(body="Test", file_name=None, starting_time=None): # Starting time in 
             file.write(log)
     
     return log[:-1]
+
