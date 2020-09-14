@@ -70,7 +70,7 @@ def body(paragraph):
             typed = typed[:-1]
             continue
         elif button == b'\r':
-            return time_delta, False
+            return time_delta, False, accuracy
         
         if letter != paragraph[i]:
             text.append(Fore.RED + letter)
@@ -82,10 +82,8 @@ def body(paragraph):
         i += 1
             
         if len("".join(typed)) == len(paragraph):
-            if "".join(typed) == paragraph:
-                logger(f"Completed Successfully [{wpm}wpm, {accuracy}%] | {''.join(text)}", "main.log", start)
-                return time_delta, True
-            
+            logger(f"Completed Successfully [{wpm}wpm, {accuracy}%] | {''.join(typed)}", "main.log", start)
+            return time_delta, True, accuracy
 
 def menu():
     paragraph = random_paragraph()
@@ -101,17 +99,15 @@ def menu():
         os.system("./sentences.txt")
         return
     
-    time_delta, is_complete = body(paragraph)
+    time_delta, is_complete, accuracy = body(paragraph)
+    wpm = len(text) / 5 / time_delta * 60
 
     if is_complete is False:
-        wpm = len(text) / 5 / time_delta * 60
-        print('\033c' + Fore.RED + "Incorrect" + Fore.WHITE + ". " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute.")
+        print('\033c' + Fore.RED + "Incorrect" + Fore.WHITE + ". " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute. \n" + Fore.BLUE + str(accuracy) + "%" + Fore.WHITE + " accuracy")
         sleep(menu_speed)
     else:
-        wpm = len(text) / 5 / time_delta * 60
-        print("\033c" + f"Sentence completed at {Fore.GREEN + str(round(wpm)) + Fore.WHITE} words per minute")
+        print("\033c" + f"Sentence completed at {Fore.GREEN + str(round(wpm)) + Fore.WHITE} words per minute. \n" + Fore.CYAN + str(accuracy) + Fore.WHITE + "% accuracy")
         sleep(menu_speed)
-
 
 if __name__ == "__main__":
     while True:
