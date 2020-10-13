@@ -4,14 +4,19 @@ from logger import logger
 
 import readchar
 import random
-import sys
 import os
 
 
-"""
+"""Menu Hotkeys
 l - open logs
-o - open sentences 
+o - open sentences
+p - leaderboard
 """
+
+
+# TODO
+# Ctrl+Backspace
+# letters stay same color changes
 
 menu_speed = 1 # In seconds
 countdown = 1 # Count down from
@@ -26,18 +31,48 @@ def time_check(starting_time):
 
     return time_diff
 
-def random_paragraph():
-    with open("sentences.txt", "r") as file:
+def leaderboard():
+    leaderboard_sorter()
+
+    with open("leaderboard", "r") as file:
         lines = file.readlines()
         
-        number = random.randint(0, len(lines) - 1)
-        
-        sentence = lines[number]
-    return sentence[:-1]
+    print("\033c========[ Leaderboard ]========")
+    
+    try:
+        for i in range(9):
+            print(" " + str(i + 1) + ": " + lines[i][:-1])
+        print("10: " + lines[10][:-1])
+    except IndexError:
+        pass
+    
+    print()
+    input("Press enter to return to menu.")
 
-def body(paragraph):
+def leaderboard_sorter():
+    with open("leaderboard", "r+") as file:
+        lines = file.readlines()
+        lines.sort()
+
+        safe = [int(x[:-1]) for x in lines]
+        safe.sort()
+        safe.reverse()
+        safe = [str(x) for x in safe][:50]
+
+    with open("leaderboard", "w") as file:
+        file.write("\n".join(safe) + "\n")
+
+def random_sentence():
+    with open("sentences", "r") as file:
+        lines = [x[:-1] for x in file.readlines()]
+        number = random.randint(0, len(lines) - 1)
+        line = lines[number]
+    sentence, description = line.split("*")
+    return sentence, description
+
+def body(sentence):
     for i in range(countdown, 0, -1):
-        print("\033c" + paragraph + Fore.LIGHTGREEN_EX +  f"\n\nStarting in {i} seconds...")
+        print("\033c" + sentence + Fore.LIGHTGREEN_EX +  f"\n\nStarting in {i} seconds...")
         sleep(1)
 
     global text
@@ -66,11 +101,30 @@ def body(paragraph):
         else:
             color = Fore.RED
         
-        print("\033c" + "".join(text) + Fore.WHITE + Back.LIGHTBLACK_EX + paragraph[i] + Back.BLACK + Fore.WHITE + paragraph[i+1:] + "\n\nCurrent Speed: " + color + str(wpm) + Fore.WHITE + f" wpm.\nAccuracy: {Fore.LIGHTCYAN_EX + str(accuracy)}%" + Fore.WHITE)
+        print("\033c" + "".join(text) + Fore.WHITE + Back.LIGHTBLACK_EX + sentence[i] + Back.BLACK + Fore.WHITE + sentence[i+1:] + 
+              "\n\nCurrent Speed: " + color + str(wpm) + Fore.WHITE + " wpm.\n" + 
+              f"Accuracy: {Fore.LIGHTCYAN_EX + str(accuracy)}%\n" + Fore.WHITE + 
+              f"Score: {Fore.LIGHTMAGENTA_EX + str(round(wpm * accuracy))}")
 
         button = readchar.readchar()
         letter = button.decode('utf-8')
         
+        if button == b'\x17':
+            if i == 0:
+                continue
+            j = 1
+            while True:
+                if typed[-j] == ' ':
+                    break
+                else:
+                    j += 1
+            i -= j
+            text = text[:-j]
+            typed = typed[:-j]
+            text = text[:-1]; text.append(" ")
+            typed = typed[:-1]; typed.append(" ")
+
+
         if button == b'\x08':
             if i == 0:
                 continue
@@ -81,21 +135,21 @@ def body(paragraph):
         elif button == b'\r':
             return time_delta, False, accuracy
         
-        if letter != paragraph[i]:
+        if letter != sentence[i]:
             text.append(Fore.RED + letter)
             incorrect += 1
-        elif letter == paragraph[i]:
+        elif letter == sentence[i]:
             text.append(Fore.GREEN + letter)
         
         typed.append(letter)
         i += 1
             
-        if len("".join(typed)) == len(paragraph):
+        if len("".join(typed)) == len(sentence):
             logger(f"Completed Successfully [{wpm}wpm, {accuracy}%] | {''.join(typed)}", "main.log", start)
             return time_delta, True, accuracy
 
 def menu():
-    paragraph = random_paragraph()
+    sentence, description = random_sentence()
     
     print("\033c" + Fore.YELLOW + "Typing Speed Test: Press" + Fore.LIGHTYELLOW_EX + " any button " + Fore.YELLOW + "to begin, " + Fore.LIGHTYELLOW_EX + "")
     
@@ -105,17 +159,29 @@ def menu():
         os.system("start logs/main.log")
         return
     elif option == "o":
-        os.system("start sentences.txt")
+        os.system("notepad sentences")
+        return
+    elif option == "p":
+        leaderboard()
         return
     
-    time_delta, is_complete, accuracy = body(paragraph)
-    wpm = len(text) / 5 / time_delta * 60
-
+    time_delta, is_complete, accuracy = body(sentence)
+    
+    try: 
+        wpm = len(text) / 5 / time_delta * 60
+    except ZeroDivisionError: 
+        wpm = 0
+    
     if not is_complete:
-        print('\033c' + Fore.RED + "Incorrect" + Fore.WHITE + ". " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute. \nAccuracy: " + Fore.LIGHTCYAN_EX + str(accuracy) + "%" + Fore.WHITE)
+        print('\033c' + Fore.RED + "Incorrect" + Fore.WHITE + ". " + Fore.GREEN + str(round(wpm)) + Fore.WHITE + " words per minute. \nAccuracy: " + Fore.LIGHTCYAN_EX + str(accuracy) + "%" + Fore.WHITE + "\n\n" + description)
         sleep(menu_speed)
     else:
-        print("\033c" + f"Sentence completed at {Fore.GREEN + str(round(wpm)) + Fore.WHITE} words per minute. \n\nAccuracy: " + Fore.LIGHTCYAN_EX + str(accuracy) + "%" + Fore.WHITE)
+        print("\033c" + f"Sentence completed at {Fore.GREEN + str(round(wpm)) + Fore.WHITE} words per minute. \n\nAccuracy: " + Fore.LIGHTCYAN_EX + str(accuracy) + "%" + Fore.WHITE + "\n\n" + description)
+        
+        with open("leaderboard", "a") as file:
+            score = round(wpm * accuracy)
+            file.write(str(score) + "\n")
+
         sleep(menu_speed)
 
 if __name__ == "__main__":

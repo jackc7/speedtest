@@ -3,5 +3,5 @@ __pycache__/
 
 *.log
 test.py
-test2.py
-
+test.txt
+leaderboard.txt

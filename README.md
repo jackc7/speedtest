@@ -1,3 +1,4 @@
 # speedtest
 
-Typing Speed Test
+Typing Speed Test  
+Works best on Windows Terminal.
