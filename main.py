@@ -101,11 +101,8 @@ def body(sentence):
         else:
             color = Fore.RED
         
-        print("\033c" + "".join(text) + Fore.WHITE + Back.LIGHTBLACK_EX + sentence[i] + Back.BLACK + Fore.WHITE + sentence[i+1:] + 
-              "\n\nCurrent Speed: " + color + str(wpm) + Fore.WHITE + " wpm.\n" + 
-              f"Accuracy: {Fore.LIGHTCYAN_EX + str(accuracy)}%\n" + Fore.WHITE + 
-              f"Score: {Fore.LIGHTMAGENTA_EX + str(round(wpm * accuracy))}")
-
+        string = "\033c" + "".join(text) + Fore.WHITE + Back.LIGHTBLACK_EX + sentence[i] + Back.BLACK + Fore.WHITE + sentence[i+1:] + "\n\nCurrent Speed: " + color + str(wpm) + Fore.WHITE + " wpm.\n" + f"Accuracy: {Fore.LIGHTCYAN_EX + str(accuracy)}%\n" + Fore.WHITE + f"Score: {Fore.LIGHTMAGENTA_EX + str(round(wpm * accuracy))}"
+        print(string)
         button = readchar.readchar()
         letter = button.decode('utf-8')
         
