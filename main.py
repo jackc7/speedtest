@@ -41,13 +41,14 @@ def leaderboard():
     
     try:
         for i in range(9):
-            print(" " + str(i + 1) + ": " + lines[i][:-1])
+            print(" " + str(i+1) + ": " + lines[i][:-1])
         print("10: " + lines[10][:-1])
     except IndexError:
         pass
     
     print()
     input("Press enter to return to menu.")
+
 
 def leaderboard_sorter():
     with open("leaderboard", "r+") as file:
@@ -62,6 +63,7 @@ def leaderboard_sorter():
     with open("leaderboard", "w") as file:
         file.write("\n".join(safe) + "\n")
 
+
 def random_sentence():
     with open("sentences", "r") as file:
         lines = [x[:-1] for x in file.readlines()]
@@ -69,6 +71,7 @@ def random_sentence():
         line = lines[number]
     sentence, description = line.split("*")
     return sentence, description
+
 
 def body(sentence):
     for i in range(countdown, 0, -1):
@@ -141,9 +144,10 @@ def body(sentence):
         typed.append(letter)
         i += 1
             
-        if len("".join(typed)) == len(sentence):
+        if len(typed) == len(sentence):
             logger(f"Completed Successfully [{wpm}wpm, {accuracy}%] | {''.join(typed)}", "main.log", start)
             return time_delta, True, accuracy
+
 
 def menu():
     sentence, description = random_sentence()
@@ -180,6 +184,7 @@ def menu():
             file.write(str(score) + "\n")
 
         sleep(menu_speed)
+
 
 if __name__ == "__main__":
     while True:
